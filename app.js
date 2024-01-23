@@ -7,11 +7,12 @@ const app = express();
 
 app.use(express.static("./public"));
 app.use(express.json());
-app.use(notFound);
 
 const tasksRouter = require("./routes/tasksRouter");
 
 app.use("/api/v1/tasks", tasksRouter);
+
+app.use(notFound);
 
 const port = process.env.POST || 5000;
 
