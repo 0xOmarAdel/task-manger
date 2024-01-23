@@ -1,11 +1,13 @@
 const express = require("express");
 const connectDB = require("./db/connect");
 require("dotenv").config();
+const notFound = require("./middleware/not-found");
 
 const app = express();
 
 app.use(express.static("./public"));
 app.use(express.json());
+app.use(notFound);
 
 const tasksRouter = require("./routes/tasksRouter");
 
