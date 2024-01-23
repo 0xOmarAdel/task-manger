@@ -13,7 +13,7 @@ const tasksRouter = require("./routes/tasksRouter");
 
 app.use("/api/v1/tasks", tasksRouter);
 
-const port = 5000;
+const port = process.env.POST || 5000;
 
 const start = async () => {
   try {
