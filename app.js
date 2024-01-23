@@ -2,6 +2,12 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
+const tasksRouter = require("./routes/tasksRouter");
+
+app.use("/api/v1/tasks", tasksRouter);
+
 const port = 5000;
 
 app.listen(port, () => console.log(`Server is listening on port ${port}...`));
